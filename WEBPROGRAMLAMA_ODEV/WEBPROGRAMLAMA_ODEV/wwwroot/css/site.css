@@ -1,69 +1,71 @@
-﻿body {
-    padding-top: 90px
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
 }
 
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
 @media (min-width: 768px) {
-    body {
-        padding-top: 0
-    }
+  html {
+    font-size: 16px;
+  }
 }
 
-@media (min-width: 768px) {
-    body {
-        margin-left: 232px
-    }
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
 }
 
-.navbar.fixed-left {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1030
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-@media (min-width: 768px) {
-    .navbar.fixed-left {
-        bottom: 0;
-        width: 232px;
-        flex-flow: column nowrap;
-        align-items: flex-start
-    }
-
-        .navbar.fixed-left .navbar-collapse {
-            flex-grow: 0;
-            flex-direction: column;
-            width: 100%
-        }
-
-            .navbar.fixed-left .navbar-collapse .navbar-nav {
-                flex-direction: column;
-                width: 100%
-            }
-
-                .navbar.fixed-left .navbar-collapse .navbar-nav .nav-item {
-                    width: 100%
-                }
-
-                    .navbar.fixed-left .navbar-collapse .navbar-nav .nav-item .dropdown-menu {
-                        top: 0
-                    }
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
 }
 
-@media (min-width: 768px) {
-    .navbar.fixed-left {
-        right: auto
-    }
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
 
-        .navbar.fixed-left .navbar-nav .nav-item .dropdown-toggle:after {
-            border-top: .3em solid transparent;
-            border-left: .3em solid;
-            border-bottom: .3em solid transparent;
-            border-right: none;
-            vertical-align: baseline
-        }
-
-        .navbar.fixed-left .navbar-nav .nav-item .dropdown-menu {
-            left: 100%
-        }
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
 }
