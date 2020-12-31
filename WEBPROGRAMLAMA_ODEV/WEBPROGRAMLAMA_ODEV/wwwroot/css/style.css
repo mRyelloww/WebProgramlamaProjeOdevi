@@ -1326,6 +1326,16 @@ ol {
 /*---------------------
     Normal Breadcrumb
 -----------------------*/
+/*
+.deneme_uyeol{
+
+ 	width:1200px;
+   	height:350px; 
+   	
+   	margin:0;
+   	padding:0; 
+
+}*/
 
 .normal-breadcrumb {
 	height: 300px;
@@ -1338,6 +1348,8 @@ ol {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
+	//background-image:url('/img/ÜyeOlmaEkranı/sopranos.jpg');
+	//background: #ffffff;
 }
 
 .normal__breadcrumb__text h2 {
@@ -1787,7 +1799,7 @@ ol {
 
 .login__form form .input__item input::placeholder {
 	color: #b7b7b7;
-}
+} 
 
 .login__form form .input__item span {
 	color: #b7b7b7;

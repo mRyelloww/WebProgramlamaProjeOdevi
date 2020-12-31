@@ -1,4 +1,200 @@
 ﻿@{
     ViewData["Title"] = "Diziler";
 }
-DİZİLER BURADA YER ALACAK
+<div class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__links">
+                    <!-- Link gördüğü zaman sonuna bir ok atıyor kıps.. -->
+
+                    <a asp-area="" asp-controller="Home" asp-action="Index"> <i class="fa fa-home">  </i> AnaSayfa </a>
+                    <span style="color:crimson"> Diziler  </span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="product-page spad">
+    <div class="container">
+        <div class="row">
+            <!-- DİZİLERİN BULUNDUĞU KOLON BAŞLIYOR -->
+            <div class="col-lg-8">
+                <div class="product__page__content">
+                    <div class="product__page__title">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-6">
+                                <div class="section-title">
+                                    <h4> DİZİLER </h4>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="product__page__filter">
+                                    <p>SIRALA:</p>
+                                    <select>
+                                        <option value="">A-Z</option>
+                                        <option value="">1-10</option>
+                                        <option value="">10-50</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DİZİLERİ BARINDIRAN ROW CLASSI BAŞLIYOR-->
+                    <div class="row">
+
+                        <!-- DİZİ1 -->
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" set-bg" data-setbg="/img/DiziPosterleri/brooklyn99.jpg">
+                                    <div class="ep">Sezon sayısı: 7</div>
+                                    <div class="comment"><i class="fa fa-comments"></i> 99</div>
+                                    <div class="view"><i class="fa fa-eye"></i> 9999</div>
+                                </div>
+
+                                <div class="product__item__text">
+                                    <ul>
+                                        <li>Aktif</li>
+                                        <li>Polisiye</li>
+                                        <li>Aksiyon</li>
+                                    </ul>
+                                    <h5><a href="#">Brooklyn Nine-Nine</a></h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DİZİ2 -->
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" set-bg" data-setbg="/img/DiziPosterleri/theboys.jpg">
+                                    <div class="ep">Sezon sayısı: 2</div>
+                                    <div class="comment"><i class="fa fa-comments"></i> 99</div>
+                                    <div class="view"><i class="fa fa-eye"></i> 9999</div>
+                                </div>
+                                <div class="product__item__text">
+                                    <ul>
+                                        <li>Sonlanmış</li>
+                                        <li>Süper Kahraman</li>
+                                        <li>Kara Mizah</li>
+                                    </ul>
+                                    <h5><a href="#">The Boys</a></h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DİZİ3 -->
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" set-bg" data-setbg="/img/DiziPosterleri/gameofthrones.jpg">
+                                    <div class="ep">Sezon sayısı: 8</div>
+                                    <div class="comment"><i class="fa fa-comments"></i> 99</div>
+                                    <div class="view"><i class="fa fa-eye"></i> 9999</div>
+                                </div>
+                                <div class="product__item__text">
+                                    <ul>
+                                        <li>Sonlanmış</li>
+                                        <li>Drama</li>
+                                        <li>Trajedi</li>
+                                        <li>Orta Çağ Fantastik</li>
+                                    </ul>
+                                    <h5><a href="#">Game Of Thrones</a></h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DİZİ4 -->
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" set-bg" data-setbg="/img/DiziPosterleri/legion.jpg">
+                                    <div class="ep">Sezon sayısı: 3</div>
+                                    <div class="comment"><i class="fa fa-comments"></i> 99</div>
+                                    <div class="view"><i class="fa fa-eye"></i> 9999</div>
+                                </div>
+                                <div class="product__item__text">
+                                    <ul>
+                                        <li>Sonlanmış</li>
+                                        <li>Trajedi</li>
+                                        <li>Bilim Kurgu</li>
+                                        <li>Süper Kahraman</li>
+                                    </ul>
+                                    <h5><a href="#">LEGION</a></h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DİZİ5 -->
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" set-bg" data-setbg="/img/DiziPosterleri/sopranosPOSTER.jpg">
+                                    <div class="ep">Sezon sayısı: 3</div>
+                                    <div class="comment"><i class="fa fa-comments"></i> 99</div>
+                                    <div class="view"><i class="fa fa-eye"></i> 9999</div>
+                                </div>
+                                <div class="product__item__text">
+                                    <ul>
+                                        <li>Sonlanmış</li>
+                                        <li>Trajedi</li>
+                                        <li>Dram</li>
+                                    </ul>
+                                    <h5><a href="#">Sopranos</a></h5>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- DİZİLERİN BULUNDUĞU ROW CLASSI BİTTİ-->
+
+                </div>
+                <!-- PAGECONTENT BİTTİ -->
+            </div>
+            <!-- DİZİLERİN BULUNDUĞU KOLON BİTTİ-->
+            <!-- TOP VİEWS BULUNDUĞU KOLON BAŞLIYOR -->
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="product__sidebar">
+
+                    <div class="product__sidebar__view">
+                        <div class="section-title">
+                            <h5>EN ÇOK İZLENENLER</h5>
+                        </div>
+                        <ul class="filter__controls">
+                            <li class="active" data-filter="*">Bu Ay</li>
+                            <!-- <li data-filter=".week"> Week </li>
+                                 <li data-filter=".month">Month</li>  -->
+                        </ul>
+
+                        <div class="filter__gallery">
+
+                            
+
+                                <div class="product__sidebar__view__item set-bg mix years month" data-setbg="/img/EnÇokİzlenenler/strangerthings.jpg">
+
+
+                                <div class="ep">Sezon sayısı: 3</div>
+                                <div class="view"><i class="fa fa-eye"></i> 9999</div>
+                                <h5><a href="#">Stranger Things</a></h5>
+                                </div>
+
+                                <div class="product__sidebar__view__item set-bg mix years month" data-setbg="/img/EnÇokİzlenenler/birdbox.jpg">
+
+                                        <div class="ep">Sezon sayısı: 3</div>
+                                        <div class="view"><i class="fa fa-eye"></i> 9999</div>
+                                        <h5><a href="#">Bird Box</a></h5>
+                                </div>
+
+                                <div class="product__sidebar__view__item set-bg mix years month" data-setbg="/img/EnÇokİzlenenler/thequeensgambitTOP.jpg">
+                                    <div class="ep">Sezon sayısı: 3</div>
+                                    <div class="view"><i class="fa fa-eye"></i> 9999</div>
+                                    <h5><a href="#">The Queen's Gambit</a></h5>
+                                </div>
+                            </div>
+
+                        </div>
+                </div>
+            </div>
+            <!-- TOP VİEWS BULUNDUĞU KOLON BİTTİ -->
+        </div>
+    </div>
+</section>

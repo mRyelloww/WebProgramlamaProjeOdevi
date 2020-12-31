@@ -8,14 +8,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>@ViewData["Title"] - WEB_SKETCHES</title>
+    <title>@ViewData["Title"] - WEBPROGRAMLAMA_ODEV</title>
 
     <meta charset="UTF-8">
     <meta name="description" content="Anime Template">
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Anime | Template</title>
+    <title>Dizile.com</title>
 
     <!-- GOOGLE FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -37,10 +37,14 @@
 
 
 <body>
+
     <div id="preloder">
         <!-- bu niye var tam çözemedim -->
-        <div class="loader"></div>
+        <div class="loader">
+
+        </div>
     </div>
+
     <!-- HEADER SECTİON -->
     <header class="header">
         <div class="container">
@@ -63,34 +67,47 @@
 
                                 <!-- Üyelik  -->
                                 <li>
-                                    <a href=""> Üyelik <span class="arrow_carrot-down"></span></a>
+                                    <a asp-area="" asp-controller="UyeOl" asp-action="UyeOlSayfasi">Üyelik <span class="arrow_carrot-down"></span></a>
 
                                     <ul class="dropdown">
-                                        <li><a href=""> Giriş Yap </a></li>
-                                        <li><a href=""> Üye Ol </a></li>
+                                        <li><a asp-area="" asp-controller="GirisYap" asp-action="GirisYapSayfasi">Giriş Yap</a></li>
+                                        <li><a asp-area="" asp-controller="UyeOl" asp-action="UyeOlSayfasi">Üye Ol</a></li>
                                     </ul>
                                 </li>
 
                                 <!-- Hakkımızda -->
-                                <li><a href="#">Hakkımızda</a></li>
+                                <li><a asp-area="" asp-controller="Hakkimizda" asp-action="HakkimizdaSayfasi">Hakkımızda</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
+
                 <div class="col-lg-2">
                     <div class="header__right">
-                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
+
+                        <a href="#" class="search-switch"><span class="icon_search"></span></a> <!-- ARAMA ÇUBUĞU MİSALİ -->
+
                         <a href=""><span class="icon_profile"></span></a>
+
                     </div>
                 </div>
+
             </div>
             <div id="mobile-menu-wrap"></div>
         </div>
     </header>
     <!-- HEADER SECTİON BİTTİ -->
-
     <div class="container">
         @RenderBody()
+    </div>
+
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch"><i class="icon_close"></i></div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
     </div>
 
     <!-- JS PLUGINLERİ -->

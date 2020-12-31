@@ -18,10 +18,23 @@ namespace WEBPROGRAMLAMA_ODEV.Controllers
             _logger = logger;
         }
 
+
+
+        
         public IActionResult Index()
         {
+
+
+            // img / AnasayfaGörüntüler / queensgambit.jpg
             return View();
         }
+
+
+
+
+
+
+
 
         public IActionResult Privacy()
         {

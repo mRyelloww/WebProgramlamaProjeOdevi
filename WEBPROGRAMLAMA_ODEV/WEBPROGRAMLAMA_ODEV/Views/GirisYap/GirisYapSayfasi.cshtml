@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Giriş Yap";
+}
+
+<section class="normal-breadcrumb set-bg" data-setbg="/img/GirişYapEkranı/sonsofanarchy.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="normal__breadcrumb__text">
+                    <h2>GİRİŞ YAP</h2>
+                    <p>Dizile.com Giriş Yapma Sayfası</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="login spad">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6">
+                <div class="login__form">
+                    <h3>GİRİŞ YAP</h3>
+                    <form action="#">
+
+                        <div class="input__item">
+                            <input type="text" placeholder="Kullanıcı Adı">
+                            <span class="icon_profile"></span>
+                        </div>
+
+                        <div class="input__item">
+                            <input type="text" placeholder="Parola">
+                            <span class="icon_lock"></span>
+                        </div>
+
+                        <button type="submit" class="site-btn">Giriş Yap</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="login__register">
+                    <h3>Bir hesabın yok mu?</h3>
+                     <a asp-area="" asp-controller="UyeOl" asp-action="UyeOlSayfasi" class="primary-btn"> Şimdi Üye Ol </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
