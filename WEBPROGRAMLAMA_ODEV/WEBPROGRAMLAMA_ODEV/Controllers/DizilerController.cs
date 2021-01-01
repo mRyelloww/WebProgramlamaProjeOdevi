@@ -20,7 +20,7 @@ namespace WEBPROGRAMLAMA_ODEV.Controllers
         {
             var DiziTablosu = contexteErisim.DiziTablo.ToList();
 
-            ViewBag.id = 0;
+            //ViewBag.id = 0;
 
             return View(DiziTablosu);
         }
@@ -28,9 +28,9 @@ namespace WEBPROGRAMLAMA_ODEV.Controllers
         public IActionResult DiziDetaySayfasi(int id)
         {
             List<string> dizininVerileri = new List<string>();
-            var DiziTablo = contexteErisim.DiziTablo.Find(id);
+            var DiziTabloIstenenSatir = contexteErisim.DiziTablo.Find(id);
 
-            return View(DiziTablo);
+            return View(DiziTabloIstenenSatir);
         }
 
     }
