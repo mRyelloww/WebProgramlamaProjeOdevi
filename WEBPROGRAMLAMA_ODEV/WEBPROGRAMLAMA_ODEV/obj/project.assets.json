@@ -8970,11 +8970,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mRyellow\\Documents\\GitHub\\WebProgramlamaProjeOdevi\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj",
+      "projectUniqueName": "C:\\Users\\mRyellow\\source\\repos\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj",
       "projectName": "WEBPROGRAMLAMA_ODEV",
-      "projectPath": "C:\\Users\\mRyellow\\Documents\\GitHub\\WebProgramlamaProjeOdevi\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj",
+      "projectPath": "C:\\Users\\mRyellow\\source\\repos\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj",
       "packagesPath": "C:\\Users\\mRyellow\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mRyellow\\Documents\\GitHub\\WebProgramlamaProjeOdevi\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\obj\\",
+      "outputPath": "C:\\Users\\mRyellow\\source\\repos\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mRyellow\\AppData\\Roaming\\NuGet\\NuGet.Config",

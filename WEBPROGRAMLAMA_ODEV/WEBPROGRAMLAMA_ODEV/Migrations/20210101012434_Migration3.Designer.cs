@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WEBPROGRAMLAMA_ODEV.Models;
 
 namespace WEBPROGRAMLAMA_ODEV.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20210101012434_Migration3")]
+    partial class Migration3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,9 +64,6 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("DiziBilgi")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DiziDosyaAdi")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DiziIMDB")

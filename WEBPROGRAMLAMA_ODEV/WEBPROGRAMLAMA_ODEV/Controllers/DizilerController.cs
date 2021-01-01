@@ -9,23 +9,29 @@ using WEBPROGRAMLAMA_ODEV.Models;
 
 namespace WEBPROGRAMLAMA_ODEV.Controllers
 {
+    
     public class DizilerController : Controller
     {
-        private readonly ILogger<DizilerController> _logger;
+        Context contexteErisim = new Context();
+        
+        public static List<Context> DizilerListesi = new List<Context>();
 
-        public DizilerController(ILogger<DizilerController> logger)
-        {
-            _logger = logger;
-        }
         public IActionResult DizilerSayfasi()
         {
-            return View();
+            var DiziTablosu = contexteErisim.DiziTablo.ToList();
+
+            ViewBag.id = 0;
+
+            return View(DiziTablosu);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult DiziDetaySayfasi(int id)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            List<string> dizininVerileri = new List<string>();
+            var DiziTablo = contexteErisim.DiziTablo.Find(id);
+
+            return View(DiziTablo);
         }
+
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "E69YJGI1SisO541f+r7WIVN1ALwDeuYyRZAxgvLRT9E2rveDFBf4KrS3L0me8c3z8uk9NziX8gt/epvfj4EmmQ==",
+  "dgSpecHash": "Wkwv+bYpOIiTw2IiWBpn35FZJGY21qrfcyBynjWVdK5JiHeiBXRtiToqkO6sCMr3qSio66jIgf4indONuMqmrA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mRyellow\\Documents\\GitHub\\WebProgramlamaProjeOdevi\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj",
+  "projectFilePath": "C:\\Users\\mRyellow\\source\\repos\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mRyellow\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\mRyellow\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

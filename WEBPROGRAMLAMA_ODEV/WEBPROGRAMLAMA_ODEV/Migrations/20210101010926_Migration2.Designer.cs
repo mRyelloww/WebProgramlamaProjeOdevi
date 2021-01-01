@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WEBPROGRAMLAMA_ODEV.Models;
 
 namespace WEBPROGRAMLAMA_ODEV.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20210101010926_Migration2")]
+    partial class Migration2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,22 +66,7 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                     b.Property<string>("DiziBilgi")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DiziDosyaAdi")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DiziIMDB")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("DiziLink")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("DiziSezonSayi")
-                        .HasColumnType("int");
-
-                    b.Property<string>("DiziStudyo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DiziTarih")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("DiziID");
