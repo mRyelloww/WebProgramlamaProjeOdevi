@@ -19,7 +19,8 @@ namespace WEBPROGRAMLAMA_ODEV.Models
         public string DiziBilgi { get; set; }
         public string DiziLink { get; set; }
         public string DiziDosyaAdi { get; set; }
-        public ICollection<DiziTurDiziler> DiziTur_Col { get; set; }
+        public string DiziTurler { get; set; }
+        
 
         //public DiziTur TurNesne{ get; set; }
 

@@ -27,7 +27,7 @@ namespace WEBPROGRAMLAMA_ODEV
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            var connection = @"server =.; database = Dizile2DB; trusted_connection = true; ";
+            var connection = @"server =.; database = CoplukDB; trusted_connection = true; ";
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(x => {
                     x.LoginPath = "";

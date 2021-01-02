@@ -70,7 +70,24 @@ foreach (var item in Model)
                                     <ul>
                                         <li><span>Stüdyo:</span> @Html.ViewData.Model.DiziStudyo </li>
                                         <li><span>Yayın Tarihi:</span> @Html.ViewData.Model.DiziTarih </li>
-                                        <li><span>Tür:</span> Action, Komedi</li>
+                                        <li>
+                                            <span>Tür: </span>
+                                            
+                                            @if (Model.DiziTurler != null)
+                                            {
+                                                string[] _turler = Model.DiziTurler.Split("-");
+                                                string _sonEleman = _turler.Last();
+
+                                                foreach (var item in _turler)
+                                                {
+                                                    @item
+                                                    if (!item.Equals(_sonEleman))
+                                                    {
+                                                       <a>,</a>
+                                                    }
+                                                }
+                                            }
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-6 col-md-6">

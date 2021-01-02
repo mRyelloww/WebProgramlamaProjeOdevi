@@ -11,6 +11,6 @@ namespace WEBPROGRAMLAMA_ODEV.Models
         [Key]
         public int UyeID { get; set; }
         public string KullaniciAdi { get; set; }
-        public string Parola { get; set; }
+        public int Parola { get; set; }
     }
 }

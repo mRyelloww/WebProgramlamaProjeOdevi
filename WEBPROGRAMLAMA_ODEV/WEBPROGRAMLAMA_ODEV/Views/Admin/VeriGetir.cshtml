@@ -1,25 +1,61 @@
 ﻿@model WEBPROGRAMLAMA_ODEV.Models.Diziler
 @{
     ViewData["Title"] = "Tablodan Veri Getirme Paneli";
-    
+
 }
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
 <br />
 <!--başlangıç formu belirledik. içinde BirimControllerda bulunuacak ve
     Post metot kullanıldığında çalışacak yani buton falan basıldığında-->
-@using (Html.BeginForm("DiziGuncelle", "Admin", FormMethod.Post))
+
+@using (Html.BeginForm("DiziGuncelle", "Admin", FormMethod.Post, new { style = "background-color:#0b0c2a" }))
 {
+    <table>
+        <tr>
+            <td><span style="color:crimson">@Html.LabelFor(x => x.DiziID)</span></td>
+            <td>@Html.TextBoxFor(x => x.DiziID, new { @class = "input__item" })</td><!--/*form-control kısmı veri giriş yeri daha güzel gözüksün diye*/-->
+        </tr>
+        <tr>
+            <td><span style="color:crimson">@Html.LabelFor(x => x.DiziAd)</span></td>
+            <td>@Html.TextBoxFor(x => x.DiziAd, new { @class = "input__item" })</td>
+        </tr>
+        <tr>
+            <td><span style="color:crimson">@Html.LabelFor(x => x.DiziTurler)</span></td>
+            <td>@Html.TextBoxFor(x => x.DiziTurler, new { @class = "input__item" })</td>
+        </tr>
+        <tr>
+            <td><span style="color:crimson">@Html.LabelFor(x => x.DiziStudyo)</span></td>
+            <td>@Html.TextBoxFor(x => x.DiziStudyo, new { @class = "input__item" })</td>
+        </tr>
+        <tr>
+            <td><span style="color:crimson">@Html.LabelFor(x => x.DiziSezonSayi)</span></td>
+            <td>@Html.TextBoxFor(x => x.DiziSezonSayi, new { @class = "input__item" })</td>
+        </tr>
+        <tr>
+            <td><span style="color:crimson">@Html.LabelFor(x => x.DiziIMDB)</span></td>
+            <td>@Html.TextBoxFor(x => x.DiziIMDB, new { @class = "input__item" })</td>
+        </tr>
+        <tr>
+            <td><span style="color:crimson">@Html.LabelFor(x => x.DiziBilgi)</span></td>
+            <td>@Html.TextBoxFor(x => x.DiziBilgi, new { @class = "input__item" })</td>
+        </tr>
+        <tr>
+            <td><span style="color:crimson">@Html.LabelFor(x => x.DiziLink)</span></td>
+            <td>@Html.TextBoxFor(x => x.DiziLink, new { @class = "input__item" })</td>
+        </tr>
+        <tr>
+            <td><span style="color:crimson">@Html.LabelFor(x => x.DiziDosyaAdi)</span></td>
+            <td>@Html.TextBoxFor(x => x.DiziDosyaAdi, new { @class = "input__item" })</td>
+        </tr>
+        <tr>
+            <td><span style="color:crimson">@Html.LabelFor(x => x.DiziTarih)</span></td>
+            <td>@Html.TextBoxFor(x => x.DiziDosyaAdi, new { @class = "input__item" })</td>
+        </tr>
+    </table>
+    <br />
     /*bu form DiziGüncelle actionResultı çalıştıracak ve içinde Birim isimli controller olacak
     post olduğunda çalışacak*/
-    @Html.LabelFor(x => x.DiziID)
-    @Html.TextBoxFor(x => x.DiziID, new { @class = "form-control" })/*form-control kısmı veri giriş yeri daha güzel gözüksün diye*/
-    <br />
-
-
-    @Html.LabelFor(x => x.DiziAd)
-    @Html.TextBoxFor(x => x.DiziAd, new { @class = "form-control" })
-    <br />
-    <button class="btn btn-def" style="background-color:#00ff21">Veri Güncelle</button>
+    <button class="site-btn">Veri Güncelle</button>
 }
+
+

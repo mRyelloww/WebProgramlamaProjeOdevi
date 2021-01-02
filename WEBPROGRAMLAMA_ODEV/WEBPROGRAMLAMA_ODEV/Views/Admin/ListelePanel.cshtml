@@ -1,34 +1,33 @@
 ﻿@using WEBPROGRAMLAMA_ODEV.Models
 @model List<WEBPROGRAMLAMA_ODEV.Models.Diziler>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" /><!--GÜZEL GÖRÜNÜM İÇİN EKLENDİ-->
 <br />
 <table class="table table-bordered">
     <tr>
-        <th>ID</th>
-        <th>Ad</th>
-        <th>Stüdyo</th>
-        <th>Sezon Sayısı</th>
-        <th>IMDB</th>
-        <th>Bilgi</th>
-        <th>Sil</th>
-        <td>Güncelle</td>
-    </tr>
+        <th style="color:crimson">ID</th>
+        <th style="color:crimson">Ad</th>
+        <th style="color:crimson">Tür</th>
+        <th style="color:crimson">Stüdyo</th>
+        <th style="color:crimson">Sezon Sayısı</th>
+        <th style="color:crimson">IMDB</th>
+        <th style="color:crimson">Bilgi</th>
+        <th style="color:crimson">Sil</th>
+        <td style="color:crimson">Güncelle</td>
+    </tr>   
     @foreach (var x in Model)
     {
         <tr>
-            <td>@x.DiziID</td>
-            <td>@x.DiziAd</td>
-            <td>@x.DiziStudyo</td>
-            <td>@x.DiziSezonSayi</td>
-            <td>@x.DiziIMDB</td>
-            <td>@x.DiziBilgi</td>
+            <td style="color:white">@x.DiziID</td>
+            <td style="color:white">@x.DiziAd</td>
+            <td style="color:white">@x.DiziTurler</td>
+            <td style="color:white">@x.DiziStudyo</td>
+            <td style="color:white">@x.DiziSezonSayi</td>
+            <td style="color:white">@x.DiziIMDB</td>
+            <td style="color:white">@x.DiziBilgi</td>
 
 
             <td><a class="btn btn-danger" asp-area="" asp-controller="Admin" asp-action="DiziSil" asp-route-id="@x.DiziID"> Sil </a></td><!--sil-->
-            <td><a class="btn btn-info"  asp-area="" asp-controller="Admin" asp-action="VeriGetir" asp-route-id="@x.DiziID"> Güncelle </a></td><!--guncelle-->
+            <td><a class="btn btn-primary" asp-area="" asp-controller="Admin" asp-action="VeriGetir" asp-route-id="@x.DiziID"> Güncelle </a></td><!--guncelle-->
             <!-- <td><a href="#" class="btn btn-info">Detaylar</a></td>  -->
 
 
@@ -37,4 +36,4 @@
 </table>
 <!--YENİ Birim TUŞUNA TIKLANDIĞINDA YENİ Birim İÇİN OLUŞTURDUĞUMUZ INDEX'E GİDECEK.
     Controller/Index şeklinde yazılıyor. UZANTILARI EKLEME-->
-<a class="btn btn-primary"  asp-area="" asp-controller="Admin" asp-action="DiziEkle">Yeni Dizi</a> 
+<a class="site-btn" asp-area="" asp-controller="Admin" asp-action="DiziEkle">Yeni Dizi</a> 

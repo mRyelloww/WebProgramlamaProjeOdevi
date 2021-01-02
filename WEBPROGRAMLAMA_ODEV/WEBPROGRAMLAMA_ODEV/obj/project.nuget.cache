@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L2dXq5kB5Vmaps0rKSC3ks0sFZbq0UzevenLJudmG6PABmd+edOwjaGPeGkBIvtMfmECqIDmnOrcYUWd8CcyVw==",
+  "dgSpecHash": "aa79wtBELXroqfGN4pPKPmeHUeCpW/IW3ovx9Yp8R0/kXWS44W+UpbFOoWbqDOuYXRCw8iTy1oqmbDcL6dRYvA==",
   "success": true,
-  "projectFilePath": "D:\\ilker\\Masaüstü\\PROJE SAVE\\SAVE YARIN COMMİTLENECEK\\WebProgramlamaProjeOdevi\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj",
+  "projectFilePath": "D:\\ilker\\Masaüstü\\PROJE SAVE\\bunda çalışcam\\WebProgramlamaProjeOdevi\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ilker\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ilker\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

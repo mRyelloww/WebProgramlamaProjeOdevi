@@ -15,9 +15,9 @@ namespace WEBPROGRAMLAMA_ODEV.Controllers
         Context contexteErisim = new Context();
         public async Task<IActionResult> AdminPanel(Admin a)
         {
-            var iliskiliDiziTablosu = contexteErisim.DiziTurDizilerTablo
+           /* var iliskiliDiziTablosu = contexteErisim.DiziTurDizilerTablo
                 .Include(d => d.DiziTur_iliski)
-                .Include(d => d.Dizi_iliski).ToList();
+                .Include(d => d.Dizi_iliski).ToList();*/
             var diziler = contexteErisim.DiziTablo.ToList();
 
             var bilgiler = contexteErisim.AdminTablo.FirstOrDefault(x => x.KullaniciAdi == a.KullaniciAdi &&
@@ -76,6 +76,16 @@ namespace WEBPROGRAMLAMA_ODEV.Controllers
         {
             var dz = contexteErisim.DiziTablo.Find(d.DiziID);/*gönderilen ID ye göre satır bulunup Dep e aktarılır.*/
             dz.DiziAd = d.DiziAd;/*tabloda olan veriyi parametreden gelen değerle değiştireceğiz*/
+            dz.DiziID = d.DiziID;
+            dz.DiziTurler = d.DiziTurler;
+            dz.DiziStudyo = d.DiziStudyo;
+            dz.DiziSezonSayi = d.DiziSezonSayi;
+            dz.DiziTarih = d.DiziTarih;
+            dz.DiziIMDB = d.DiziIMDB;
+            dz.DiziDosyaAdi = d.DiziDosyaAdi;
+            dz.DiziBilgi = d.DiziBilgi;
+            dz.DiziLink = d.DiziLink;
+
             contexteErisim.SaveChanges();
             return RedirectToAction("ListelePanel");
         }

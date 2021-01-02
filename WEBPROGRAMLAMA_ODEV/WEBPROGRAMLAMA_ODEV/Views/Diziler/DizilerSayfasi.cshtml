@@ -1,5 +1,4 @@
-﻿
-@using WEBPROGRAMLAMA_ODEV.Models
+﻿@using WEBPROGRAMLAMA_ODEV.Models
 @model List<WEBPROGRAMLAMA_ODEV.Models.Diziler>
 
 @{
@@ -63,11 +62,21 @@
                                     </div>
 
                                     <div class="product__item__text">
-                                        <ul>
-                                            <li>Aktif</li>
-                                            <li>Polisiye</li>
-                                            <li>Aksiyon</li>
-                                        </ul>
+
+                                        @if (Model[i].DiziTurler != null)
+                                        {
+                                            string[] _turler = Model[i].DiziTurler.Split("-");
+                                            TempData["tur"] = _turler;
+                                            <ul>
+                                                @foreach (var item in _turler)
+                                                {
+                                                    <li>@item</li>
+                                                }
+                                            </ul>
+                                        }
+
+
+
                                         <h5> <a asp-area="" asp-controller="Diziler" asp-action="DiziDetaySayfasi" asp-route-id="@Model[i].DiziID"> @Model[i].DiziAd </a> </h5>
                                     </div>
                                 </div>

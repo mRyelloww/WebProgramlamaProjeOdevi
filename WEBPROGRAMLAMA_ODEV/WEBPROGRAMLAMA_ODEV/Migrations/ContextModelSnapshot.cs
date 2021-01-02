@@ -36,36 +36,6 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                     b.ToTable("AdminTablo");
                 });
 
-            modelBuilder.Entity("WEBPROGRAMLAMA_ODEV.Models.DiziTur", b =>
-                {
-                    b.Property<int>("TurID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("Tur")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("TurID");
-
-                    b.ToTable("DiziTurTablo");
-                });
-
-            modelBuilder.Entity("WEBPROGRAMLAMA_ODEV.Models.DiziTurDiziler", b =>
-                {
-                    b.Property<int>("DiziID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TurID")
-                        .HasColumnType("int");
-
-                    b.HasKey("DiziID", "TurID");
-
-                    b.HasIndex("TurID");
-
-                    b.ToTable("DiziTurDizilerTablo");
-                });
-
             modelBuilder.Entity("WEBPROGRAMLAMA_ODEV.Models.Diziler", b =>
                 {
                     b.Property<int>("DiziID")
@@ -100,6 +70,9 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                     b.Property<string>("DiziTarih")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("DiziTurler")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("DiziID");
 
                     b.ToTable("DiziTablo");
@@ -115,41 +88,12 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                     b.Property<string>("KullaniciAdi")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Parola")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Parola")
+                        .HasColumnType("int");
 
                     b.HasKey("UyeID");
 
                     b.ToTable("UyelerTablo");
-                });
-
-            modelBuilder.Entity("WEBPROGRAMLAMA_ODEV.Models.DiziTurDiziler", b =>
-                {
-                    b.HasOne("WEBPROGRAMLAMA_ODEV.Models.Diziler", "Dizi_iliski")
-                        .WithMany("DiziTur_Col")
-                        .HasForeignKey("DiziID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WEBPROGRAMLAMA_ODEV.Models.DiziTur", "DiziTur_iliski")
-                        .WithMany("DiziTur_Col")
-                        .HasForeignKey("TurID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Dizi_iliski");
-
-                    b.Navigation("DiziTur_iliski");
-                });
-
-            modelBuilder.Entity("WEBPROGRAMLAMA_ODEV.Models.DiziTur", b =>
-                {
-                    b.Navigation("DiziTur_Col");
-                });
-
-            modelBuilder.Entity("WEBPROGRAMLAMA_ODEV.Models.Diziler", b =>
-                {
-                    b.Navigation("DiziTur_Col");
                 });
 #pragma warning restore 612, 618
         }

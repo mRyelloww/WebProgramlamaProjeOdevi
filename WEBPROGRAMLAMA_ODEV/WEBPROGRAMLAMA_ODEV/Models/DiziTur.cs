@@ -11,6 +11,6 @@ namespace WEBPROGRAMLAMA_ODEV.Models
         [Key]
         public int TurID { get; set; }
         public string Tur { get; set; }
-        public ICollection<DiziTurDiziler> DiziTur_Col{ get; set; }
+       
     }
 }

@@ -9,8 +9,8 @@ using WEBPROGRAMLAMA_ODEV.Models;
 namespace WEBPROGRAMLAMA_ODEV.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210101162224_Migration1")]
-    partial class Migration1
+    [Migration("20210102093308_calisirmsn")]
+    partial class calisirmsn
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,6 +19,24 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
+
+            modelBuilder.Entity("WEBPROGRAMLAMA_ODEV.Models.Admin", b =>
+                {
+                    b.Property<int>("AdminID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("KullaniciAdi")
+                        .HasColumnType("Varchar(20)");
+
+                    b.Property<string>("Sifre")
+                        .HasColumnType("Varchar(10)");
+
+                    b.HasKey("AdminID");
+
+                    b.ToTable("AdminTablo");
+                });
 
             modelBuilder.Entity("WEBPROGRAMLAMA_ODEV.Models.DiziTur", b =>
                 {
@@ -87,6 +105,24 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                     b.HasKey("DiziID");
 
                     b.ToTable("DiziTablo");
+                });
+
+            modelBuilder.Entity("WEBPROGRAMLAMA_ODEV.Models.Uyeler", b =>
+                {
+                    b.Property<int>("UyeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("KullaniciAdi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Parola")
+                        .HasColumnType("int");
+
+                    b.HasKey("UyeID");
+
+                    b.ToTable("UyelerTablo");
                 });
 
             modelBuilder.Entity("WEBPROGRAMLAMA_ODEV.Models.DiziTurDiziler", b =>

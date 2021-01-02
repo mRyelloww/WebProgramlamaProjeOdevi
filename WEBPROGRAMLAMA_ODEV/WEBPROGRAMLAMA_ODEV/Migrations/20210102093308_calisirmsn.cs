@@ -2,10 +2,24 @@
 
 namespace WEBPROGRAMLAMA_ODEV.Migrations
 {
-    public partial class Migration1 : Migration
+    public partial class calisirmsn : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "AdminTablo",
+                columns: table => new
+                {
+                    AdminID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    KullaniciAdi = table.Column<string>(type: "Varchar(20)", nullable: true),
+                    Sifre = table.Column<string>(type: "Varchar(10)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AdminTablo", x => x.AdminID);
+                });
+
             migrationBuilder.CreateTable(
                 name: "DiziTablo",
                 columns: table => new
@@ -41,6 +55,20 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UyelerTablo",
+                columns: table => new
+                {
+                    UyeID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    KullaniciAdi = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Parola = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UyelerTablo", x => x.UyeID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "DiziTurDizilerTablo",
                 columns: table => new
                 {
@@ -73,7 +101,13 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "AdminTablo");
+
+            migrationBuilder.DropTable(
                 name: "DiziTurDizilerTablo");
+
+            migrationBuilder.DropTable(
+                name: "UyelerTablo");
 
             migrationBuilder.DropTable(
                 name: "DiziTablo");
