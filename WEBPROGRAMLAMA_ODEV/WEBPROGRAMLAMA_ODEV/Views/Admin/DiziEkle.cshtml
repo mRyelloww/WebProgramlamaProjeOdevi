@@ -1,0 +1,42 @@
+﻿@model WEBPROGRAMLAMA_ODEV.Models.Diziler
+<br />
+<form class="form-group" method="post">
+    <span style="color:crimson">@Html.LabelFor(x => x.DiziAd)</span>
+    <!--LABELIN İÇİNE BirimAD SUTUNNUDA NE YAZIYORSA O YAZSIN
+            <b>BirimAdı</b> ile aynı şey-->
+    @Html.TextBoxFor(x => x.DiziAd, new { @class = "input__item" })
+    <br />
+    <!--TEXTBOXA GİRİLEN VERİLERİ Birim AD İLE EŞLEŞTİRECEK
+            2.kısım veri giriş yeri daha güzel gözüksün diye-->
+
+    <span style="color:crimson">@Html.LabelFor(x => x.DiziStudyo)</span>
+    @Html.TextBoxFor(x => x.DiziStudyo, new { @class = "input__item" })
+    <br />
+    <span style="color:crimson">@Html.LabelFor(x => x.DiziTarih)</span>
+    @Html.TextBoxFor(x => x.DiziTarih, new { @class = "input__item" })
+    <br />
+    <span style="color:crimson">@Html.LabelFor(x => x.DiziSezonSayi)</span>
+    @Html.TextBoxFor(x => x.DiziSezonSayi, new { @class = "input__item" })
+    <br />
+    <span style="color:crimson">@Html.LabelFor(x => x.DiziIMDB)</span>
+    @Html.TextBoxFor(x => x.DiziIMDB, new { @class = "input__item" })
+    <br />
+    <span style="color:crimson">@Html.LabelFor(x => x.DiziBilgi)</span>
+    @Html.TextBoxFor(x => x.DiziBilgi, new { @class = "input__item" })
+    <br />
+    <span style="color:crimson">@Html.LabelFor(x => x.DiziLink)</span>
+    @Html.TextBoxFor(x => x.DiziLink, new { @class = "input__item" })
+    <br />
+    <span style="color:crimson">@Html.LabelFor(x => x.DiziDosyaAdi)</span>
+    @Html.TextBoxFor(x => x.DiziDosyaAdi, new { @class = "input__item" })
+    <br />
+
+    <!--TÜRLERİ ÇOKTAN SEÇMELİ EKLEYEBİLİRİZ.-->
+    @{ /*
+                  Html.LabelFor(x => x.BirimID);
+                  Html.DropDownListFor(x => x.BirimNesne.BirimID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" });*/
+    }
+    <!--selectlistitem a doldurulacak değerleri viewBag ile taşıyor.-->
+    <br />
+    <button class="btn btn-info">Dizi Ekle</button>
+</form>

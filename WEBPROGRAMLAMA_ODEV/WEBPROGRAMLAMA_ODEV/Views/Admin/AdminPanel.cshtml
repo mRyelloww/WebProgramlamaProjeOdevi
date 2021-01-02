@@ -1,6 +1,8 @@
 ﻿@{
-    ViewData["Title"] = "Giriş Yap";
+    ViewData["Title"] = "Admin Giriş";
+    
 }
+
 
 <section class="normal-breadcrumb set-bg" data-setbg="/img/GirişYapEkranı/sonsofanarchy.jpg">
     <div class="container">
@@ -22,15 +24,15 @@
             <div class="col-lg-6">
                 <div class="login__form">
                     <h3>GİRİŞ YAP</h3>
-                    <form action="#">
+                    <form method="post">
 
                         <div class="input__item">
-                            <input type="text" placeholder="Kullanıcı Adı">
+                            <input type="text" placeholder="Kullanıcı Adı" class="name" name="KullaniciAdi" required="">
                             <span class="icon_profile"></span>
                         </div>
 
                         <div class="input__item">
-                            <input type="password" placeholder="Parola">
+                            <input type="password" placeholder="Parola" class="password" name="Sifre" required="">
                             <span class="icon_lock"></span>
                         </div>
 
@@ -38,14 +40,6 @@
                     </form>
                 </div>
             </div>
-
-            <div class="col-lg-6">
-                <div class="login__register">
-                    <h3>Bir hesabın yok mu?</h3>
-                     <a asp-area="" asp-controller="UyeOl" asp-action="UyeOlSayfasi" class="primary-btn"> Şimdi Üye Ol </a>
-                </div>
-            </div>
-
         </div>
     </div>
 </section>

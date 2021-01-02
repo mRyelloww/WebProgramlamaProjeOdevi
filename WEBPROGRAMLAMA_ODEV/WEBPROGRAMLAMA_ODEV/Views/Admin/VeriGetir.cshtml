@@ -1,0 +1,25 @@
+﻿@model WEBPROGRAMLAMA_ODEV.Models.Diziler
+@{
+    ViewData["Title"] = "Tablodan Veri Getirme Paneli";
+    
+}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<br />
+<!--başlangıç formu belirledik. içinde BirimControllerda bulunuacak ve
+    Post metot kullanıldığında çalışacak yani buton falan basıldığında-->
+@using (Html.BeginForm("DiziGuncelle", "Admin", FormMethod.Post))
+{
+    /*bu form DiziGüncelle actionResultı çalıştıracak ve içinde Birim isimli controller olacak
+    post olduğunda çalışacak*/
+    @Html.LabelFor(x => x.DiziID)
+    @Html.TextBoxFor(x => x.DiziID, new { @class = "form-control" })/*form-control kısmı veri giriş yeri daha güzel gözüksün diye*/
+    <br />
+
+
+    @Html.LabelFor(x => x.DiziAd)
+    @Html.TextBoxFor(x => x.DiziAd, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-def" style="background-color:#00ff21">Veri Güncelle</button>
+}

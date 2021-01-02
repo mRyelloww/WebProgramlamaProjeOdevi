@@ -2,7 +2,7 @@
 
 namespace WEBPROGRAMLAMA_ODEV.Migrations
 {
-    public partial class Migration__2 : Migration
+    public partial class Migration37 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

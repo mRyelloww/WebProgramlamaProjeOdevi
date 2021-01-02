@@ -2,7 +2,7 @@
 
 namespace WEBPROGRAMLAMA_ODEV.Migrations
 {
-    public partial class Migration__1 : Migration
+    public partial class Migration1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,20 +41,6 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "UyelerTablo",
-                columns: table => new
-                {
-                    UyeID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    KullaniciAdi = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Parola = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UyelerTablo", x => x.UyeID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "DiziTurDizilerTablo",
                 columns: table => new
                 {
@@ -88,9 +74,6 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
         {
             migrationBuilder.DropTable(
                 name: "DiziTurDizilerTablo");
-
-            migrationBuilder.DropTable(
-                name: "UyelerTablo");
 
             migrationBuilder.DropTable(
                 name: "DiziTablo");

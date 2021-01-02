@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using WEBPROGRAMLAMA_ODEV.Models;
 
@@ -13,7 +14,6 @@ namespace WEBPROGRAMLAMA_ODEV.Controllers
     public class DizilerController : Controller
     {
         Context contexteErisim = new Context();
-        
         public static List<Context> DizilerListesi = new List<Context>();
 
         public IActionResult DizilerSayfasi()
@@ -31,8 +31,6 @@ namespace WEBPROGRAMLAMA_ODEV.Controllers
 
             return View(DiziTabloIstenenSatir);
         }
-
-        // BEĞEN butonuna basıldığında dizinin beğenisinin artmasına yarayan ActionResult.
         public IActionResult BegeniArtti(int id)
         {
             var DiziTabloIstenenSatir = contexteErisim.DiziTablo.Find(id);
@@ -41,6 +39,5 @@ namespace WEBPROGRAMLAMA_ODEV.Controllers
 
             return RedirectToAction("DiziDetaySayfasi", new { id = id });
         }
-
     }
 }

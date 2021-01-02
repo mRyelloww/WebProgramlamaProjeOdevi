@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mRyellow\\Desktop\\SAVE 05.07 OCAK2\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj": {}
+    "D:\\ilker\\Masaüstü\\PROJE SAVE\\SAVE YARIN COMMİTLENECEK\\WebProgramlamaProjeOdevi\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mRyellow\\Desktop\\SAVE 05.07 OCAK2\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj": {
+    "D:\\ilker\\Masaüstü\\PROJE SAVE\\SAVE YARIN COMMİTLENECEK\\WebProgramlamaProjeOdevi\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mRyellow\\Desktop\\SAVE 05.07 OCAK2\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj",
+        "projectUniqueName": "D:\\ilker\\Masaüstü\\PROJE SAVE\\SAVE YARIN COMMİTLENECEK\\WebProgramlamaProjeOdevi\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj",
         "projectName": "WEBPROGRAMLAMA_ODEV",
-        "projectPath": "C:\\Users\\mRyellow\\Desktop\\SAVE 05.07 OCAK2\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj",
-        "packagesPath": "C:\\Users\\mRyellow\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mRyellow\\Desktop\\SAVE 05.07 OCAK2\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\obj\\",
+        "projectPath": "D:\\ilker\\Masaüstü\\PROJE SAVE\\SAVE YARIN COMMİTLENECEK\\WebProgramlamaProjeOdevi\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj",
+        "packagesPath": "C:\\Users\\ilker\\.nuget\\packages\\",
+        "outputPath": "D:\\ilker\\Masaüstü\\PROJE SAVE\\SAVE YARIN COMMİTLENECEK\\WebProgramlamaProjeOdevi\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mRyellow\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ilker\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,7 +38,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.1, )"
@@ -85,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "D:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

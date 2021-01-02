@@ -21,10 +21,10 @@ namespace WEBPROGRAMLAMA_ODEV.Models
 
         public DbSet<Diziler> DiziTablo { get; set; }
         public DbSet<DiziTur> DiziTurTablo { get; set; }
-        public DbSet<Uyeler> UyelerTablo { get; set; }
         public DbSet<DiziTurDiziler> DiziTurDizilerTablo { get; set; }
+        public DbSet<Admin> AdminTablo { get; set; }
 
-
+        public DbSet<Uyeler> UyelerTablo { get; set; }
 
         /*VERİTABANINA YANSITMA YAPACAĞIMIZ SINIF
          * veritabınındaki tablolar*/
