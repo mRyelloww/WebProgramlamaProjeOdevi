@@ -19,7 +19,6 @@ namespace WEBPROGRAMLAMA_ODEV.Controllers
         public IActionResult DizilerSayfasi()
         {
             var DiziTablosu = contexteErisim.DiziTablo.ToList();
-
             //ViewBag.id = 0;
 
             return View(DiziTablosu);
@@ -31,6 +30,16 @@ namespace WEBPROGRAMLAMA_ODEV.Controllers
             var DiziTabloIstenenSatir = contexteErisim.DiziTablo.Find(id);
 
             return View(DiziTabloIstenenSatir);
+        }
+
+        // BEĞEN butonuna basıldığında dizinin beğenisinin artmasına yarayan ActionResult.
+        public IActionResult BegeniArtti(int id)
+        {
+            var DiziTabloIstenenSatir = contexteErisim.DiziTablo.Find(id);
+            DiziTabloIstenenSatir.DiziBegeni++;
+            contexteErisim.SaveChanges();
+
+            return RedirectToAction("DiziDetaySayfasi", new { id = id });
         }
 
     }

@@ -87,6 +87,24 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                     b.ToTable("DiziTablo");
                 });
 
+            modelBuilder.Entity("WEBPROGRAMLAMA_ODEV.Models.Uyeler", b =>
+                {
+                    b.Property<int>("UyeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("KullaniciAdi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Parola")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UyeID");
+
+                    b.ToTable("UyelerTablo");
+                });
+
             modelBuilder.Entity("WEBPROGRAMLAMA_ODEV.Models.DiziTurDiziler", b =>
                 {
                     b.HasOne("WEBPROGRAMLAMA_ODEV.Models.Diziler", "Dizi_iliski")

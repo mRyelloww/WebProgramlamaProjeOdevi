@@ -1,4 +1,7 @@
-﻿@{
+﻿@model bool
+
+
+@{
     ViewData["Title"] = "Üye Ol";
 }
 <!--
@@ -11,6 +14,10 @@
         background-image: url('../wwwroot/img/ÜyeOlmaEkranı/sopranos.jpg');
     }
 </style> -->
+@if (@Model == true)
+{
+    <script>alert("Kullanıcı adı kullanımda lütfen başka kullanıcı adı deneyiniz!");</script>
+}
 
 <section class="normal-breadcrumb set-bg" data-setbg="/img/ÜyeOlmaEkranı/sopranos.jpg">
     <div class="container">
@@ -34,19 +41,23 @@
 
                     <h3>ÜYE OL</h3>
 
-                    <form action="#">
+                    <form method="post">
+                        <!-- KULLANICI ADI GİRDİSİ -->
                         <div class="input__item">
-                            <input type="text" placeholder="Kullanıcı Adı">
+                            <input type="text" placeholder="Kullanıcı Adı" class="name" name="KullaniciAdi" required="" />
                             <span class="icon_profile"></span>
                         </div>
+
+                        <!-- PAROLA GİRDİSİ -->
                         <div class="input__item">
-                            <input type="text" placeholder="Parola">
+                            <input type="password" placeholder="Parola" class="password" name="Parola" required="">
                             <span class="icon_lock"></span>
                         </div>
+
                         <button type="submit" class="site-btn">Üye Ol</button>
                     </form>
 
-                    <h5>Zaten bir hesabın var mı? <a href="#">Giriş Yap!</a></h5>
+                    <h5>Zaten bir hesabın var mı? <a asp-area="" asp-controller="GirisYap" asp-action="GirisYapSayfasi">Giriş Yap!</a></h5>
                 </div>
             </div>
 

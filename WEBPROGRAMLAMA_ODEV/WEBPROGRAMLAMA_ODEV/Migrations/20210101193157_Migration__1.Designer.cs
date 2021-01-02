@@ -9,8 +9,8 @@ using WEBPROGRAMLAMA_ODEV.Models;
 namespace WEBPROGRAMLAMA_ODEV.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210101015028_Migration4")]
-    partial class Migration4
+    [Migration("20210101193157_Migration__1")]
+    partial class Migration__1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -87,6 +87,24 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                     b.HasKey("DiziID");
 
                     b.ToTable("DiziTablo");
+                });
+
+            modelBuilder.Entity("WEBPROGRAMLAMA_ODEV.Models.Uyeler", b =>
+                {
+                    b.Property<int>("UyeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("KullaniciAdi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Parola")
+                        .HasColumnType("int");
+
+                    b.HasKey("UyeID");
+
+                    b.ToTable("UyelerTablo");
                 });
 
             modelBuilder.Entity("WEBPROGRAMLAMA_ODEV.Models.DiziTurDiziler", b =>

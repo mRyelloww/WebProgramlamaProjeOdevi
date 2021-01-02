@@ -2,7 +2,7 @@
 
 namespace WEBPROGRAMLAMA_ODEV.Migrations
 {
-    public partial class Migration1 : Migration
+    public partial class Migration__1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,9 +13,14 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                     DiziID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DiziAd = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DiziOy = table.Column<int>(type: "int", nullable: false),
+                    DiziBegeni = table.Column<int>(type: "int", nullable: false),
+                    DiziStudyo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DiziTarih = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DiziSezonSayi = table.Column<int>(type: "int", nullable: false),
+                    DiziIMDB = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DiziBilgi = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DiziLink = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    DiziLink = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DiziDosyaAdi = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -33,6 +38,20 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DiziTurTablo", x => x.TurID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UyelerTablo",
+                columns: table => new
+                {
+                    UyeID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    KullaniciAdi = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Parola = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UyelerTablo", x => x.UyeID);
                 });
 
             migrationBuilder.CreateTable(
@@ -69,6 +88,9 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
         {
             migrationBuilder.DropTable(
                 name: "DiziTurDizilerTablo");
+
+            migrationBuilder.DropTable(
+                name: "UyelerTablo");
 
             migrationBuilder.DropTable(
                 name: "DiziTablo");

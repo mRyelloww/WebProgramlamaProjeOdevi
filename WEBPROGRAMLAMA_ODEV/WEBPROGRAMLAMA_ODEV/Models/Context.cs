@@ -21,6 +21,7 @@ namespace WEBPROGRAMLAMA_ODEV.Models
 
         public DbSet<Diziler> DiziTablo { get; set; }
         public DbSet<DiziTur> DiziTurTablo { get; set; }
+        public DbSet<Uyeler> UyelerTablo { get; set; }
         public DbSet<DiziTurDiziler> DiziTurDizilerTablo { get; set; }
 
 

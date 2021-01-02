@@ -9,8 +9,8 @@ using WEBPROGRAMLAMA_ODEV.Models;
 namespace WEBPROGRAMLAMA_ODEV.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20201231200439_Migration1")]
-    partial class Migration1
+    [Migration("20210102013144_Migration__2")]
+    partial class Migration__2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -60,18 +60,51 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                     b.Property<string>("DiziAd")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("DiziBegeni")
+                        .HasColumnType("int");
+
                     b.Property<string>("DiziBilgi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DiziDosyaAdi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DiziIMDB")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DiziLink")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DiziOy")
+                    b.Property<int>("DiziSezonSayi")
                         .HasColumnType("int");
+
+                    b.Property<string>("DiziStudyo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DiziTarih")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("DiziID");
 
                     b.ToTable("DiziTablo");
+                });
+
+            modelBuilder.Entity("WEBPROGRAMLAMA_ODEV.Models.Uyeler", b =>
+                {
+                    b.Property<int>("UyeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("KullaniciAdi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Parola")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UyeID");
+
+                    b.ToTable("UyelerTablo");
                 });
 
             modelBuilder.Entity("WEBPROGRAMLAMA_ODEV.Models.DiziTurDiziler", b =>

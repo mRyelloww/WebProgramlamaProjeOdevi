@@ -51,99 +51,27 @@
                     <!-- DİZİLERİ BARINDIRAN ROW CLASSI BAŞLIYOR-->
                     <div class="row">
 
-                        <!-- DİZİ1 -->
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" set-bg" data-setbg="/img/DiziPosterleri/brooklyn99.jpg">
-                                    <div class="ep">Sezon sayısı: 7</div>
-                                    <div class="comment"><i class="fa fa-thumbs-up"></i> 99</div>
-                                </div>
+                        <!-- DİZİ -->
+                        @for (int i = 0; i < Model.Count(); i++) {
 
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Aktif</li>
-                                        <li>Polisiye</li>
-                                        <li>Aksiyon</li>
-                                    </ul>
-                                      <h5> <a asp-area="" asp-controller="Diziler" asp-action="DiziDetaySayfasi" asp-route-id="7"> Brooklyn Nine-Nine </a> </h5>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" set-bg" data-setbg="/img/DiziPosterleri/@Model[i].DiziDosyaAdi">
+                                        <div class="ep">Sezon sayısı: @Model[i].DiziSezonSayi</div>
+                                        <div class="comment"><i class="fa fa-thumbs-up"></i> @Model[i].DiziBegeni</div>
+                                    </div>
+
+                                    <div class="product__item__text">
+                                        <ul>
+                                            <li>Aktif</li>
+                                            <li>Polisiye</li>
+                                            <li>Aksiyon</li>
+                                        </ul>
+                                        <h5> <a asp-area="" asp-controller="Diziler" asp-action="DiziDetaySayfasi" asp-route-id="@Model[i].DiziID"> @Model[i].DiziAd </a> </h5>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- DİZİ2 -->
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" set-bg" data-setbg="/img/DiziPosterleri/theboys.jpg">
-                                    <div class="ep">Sezon sayısı: 2</div>
-                                    <div class="comment"><i class="fa fa-thumbs-up"></i> 99</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Sonlanmış</li>
-                                        <li>Süper Kahraman</li>
-                                        <li>Kara Mizah</li>
-                                    </ul>
-                                    <h5> <a asp-area="" asp-controller="Diziler" asp-action="DiziDetaySayfasi" asp-route-id="8">The Boys</a> </h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- DİZİ3 -->
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" set-bg" data-setbg="/img/DiziPosterleri/gameofthrones.jpg">
-                                    <div class="ep">Sezon sayısı: 8</div>
-                                    <div class="comment"><i class="fa fa-thumbs-up"></i> 99</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Sonlanmış</li>
-                                        <li>Drama</li>
-                                        <li>Trajedi</li>
-                                        <li>Orta Çağ Fantastik</li>
-                                    </ul>
-                                    <h5> <a asp-area="" asp-controller="Diziler" asp-action="DiziDetaySayfasi" asp-route-id="9"> Game Of Thrones </a> </h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- DİZİ4 -->
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" set-bg" data-setbg="/img/DiziPosterleri/legion.jpg">
-                                    <div class="ep">Sezon sayısı: 3</div>
-                                    <div class="comment"><i class="fa fa-thumbs-up"></i> 99</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Sonlanmış</li>
-                                        <li>Trajedi</li>
-                                        <li>Bilim Kurgu</li>
-                                        <li>Süper Kahraman</li>
-                                    </ul>
-                                    <h5> <a asp-area="" asp-controller="Diziler" asp-action="DiziDetaySayfasi" asp-route-id="10">LEGION</a> </h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- DİZİ5 -->
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" set-bg" data-setbg="/img/DiziPosterleri/sopranosPOSTER.jpg">
-                                    <div class="ep">Sezon sayısı: 3</div>
-                                    <div class="comment"><i class="fa fa-thumbs-up"></i> 99</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Sonlanmış</li>
-                                        <li>Trajedi</li>
-                                        <li>Dram</li>
-                                    </ul>
-                                    <h5> <a asp-area="" asp-controller="Diziler" asp-action="DiziDetaySayfasi" asp-route-id="12">Sopranos</a> </h5>
-                                </div>
-                            </div>
-                        </div>
-
+                        }
                     </div>
                     <!-- DİZİLERİN BULUNDUĞU ROW CLASSI BİTTİ-->
 
@@ -166,35 +94,42 @@
                         </ul>
 
                         <div class="filter__gallery">
+                            @for (int i = 0; i < Model.Count(); i++)
+                            {
 
+                                if (Model[i].DiziAd == "The Queen's Gambit")
+                                {
+                                    <div class="product__sidebar__view__item set-bg mix years month" data-setbg="/img/EnÇokİzlenenler/thequeensgambit.jpg">
+                                        <div class="ep">Sezon sayısı: @Model[i].DiziSezonSayi</div>
+                                        <div class="view"><i class="fa fa-thumbs-up"></i>  @Model[i].DiziBegeni</div>
+                                        <h5><a asp-area="" asp-controller="Diziler" asp-action="DiziDetaySayfasi" asp-route-id="@Model[i].DiziID">The Queen's Gambit</a></h5>
+                                    </div>
+                                }
+                                if (Model[i].DiziAd == "Stranger Things")
+                                {
+                                    <div class="product__sidebar__view__item set-bg mix years month" data-setbg="/img/EnÇokİzlenenler/strangerthings.jpg">
+                                        <div class="ep">Sezon sayısı: @Model[i].DiziSezonSayi</div>
+                                        <div class="view"><i class="fa fa-thumbs-up"></i> @Model[i].DiziBegeni </div>
+                                        <h5><a asp-area="" asp-controller="Diziler" asp-action="DiziDetaySayfasi" asp-route-id="@Model[i].DiziID">Stranger Things</a></h5>
+                                    </div>
+                                }
+                                if (Model[i].DiziAd == "Lucifer")
+                                {
+                                    <div class="product__sidebar__view__item set-bg mix years month" data-setbg="/img/EnÇokİzlenenler/lucifer.jpg">
 
+                                        <div class="ep">Sezon sayısı: @Model[i].DiziSezonSayi</div>
+                                        <div class="view"><i class="fa fa-thumbs-up"></i> @Model[i].DiziBegeni </div>
+                                        <h5><a asp-area="" asp-controller="Diziler" asp-action="DiziDetaySayfasi" asp-route-id="@Model[i].DiziID">Lucifer</a></h5>
+                                    </div>
+                                }
 
-                            <div class="product__sidebar__view__item set-bg mix years month" data-setbg="/img/EnÇokİzlenenler/strangerthings.jpg">
-
-
-                                <div class="ep">Sezon sayısı: 3</div>
-                                <div class="view"><i class="fa fa-thumbs-up"></i> 99</div>
-                                <h5><a href="#">Stranger Things</a></h5>
-                            </div>
-
-                            <div class="product__sidebar__view__item set-bg mix years month" data-setbg="/img/EnÇokİzlenenler/birdbox.jpg">
-
-                                <div class="ep">Sezon sayısı: 3</div>
-                                <div class="view"><i class="fa fa-thumbs-up"></i> 99</div>
-                                <h5><a href="#">Bird Box</a></h5>
-                            </div>
-
-                            <div class="product__sidebar__view__item set-bg mix years month" data-setbg="/img/EnÇokİzlenenler/thequeensgambitTOP.jpg">
-                                <div class="ep">Sezon sayısı: 3</div>
-                                <div class="view"><i class="fa fa-thumbs-up"></i> 99</div>
-                                <h5><a href="#">The Queen's Gambit</a></h5>
-                            </div>
+                            }
                         </div>
-
                     </div>
                 </div>
+
             </div>
-            <!-- TOP VİEWS BULUNDUĞU KOLON BİTTİ -->
         </div>
+            <!-- TOP VİEWS BULUNDUĞU KOLON BİTTİ -->
     </div>
 </section>
