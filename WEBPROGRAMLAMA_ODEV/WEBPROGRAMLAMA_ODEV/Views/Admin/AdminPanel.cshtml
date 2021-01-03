@@ -1,44 +1,42 @@
-﻿@{
-    ViewData["Title"] = "Admin Giriş";
-    
-}
+﻿@using WEBPROGRAMLAMA_ODEV.Models
+@model List<WEBPROGRAMLAMA_ODEV.Models.Diziler>
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th style="color:crimson">ID</th>
+        <th style="color:crimson">Ad</th>
+        <th style="color:crimson">Tür</th>
+        <th style="color:crimson">Stüdyo</th>
+        <td style="color:crimson">Tarih</td>
+        <th style="color:crimson">Sezon Sayısı</th>
+        <th style="color:crimson">Beğeni</th>
+        <th style="color:crimson">IMDB</th>
+        <th style="color:crimson">Bilgi</th>
+        <th style="color:crimson">Sil</th>
+        <td style="color:crimson">Güncelle</td>
+    </tr>
+    @foreach (var x in Model) /* ACTİONDAN GÖNDERİLEN DİZİLER TABLOSUNDAKİ TÜM DİZİLER BİLGİLERİYLE BURADA LİSTELENİR. */
+    {
+        <tr>
+            <td style="color:white">@x.DiziID</td>
+            <td style="color:white">@x.DiziAd</td>
+            <td style="color:white">@x.DiziTurler</td>
+            <td style="color:white">@x.DiziStudyo</td>
+            <td style="color:white">@x.DiziTarih</td>
+            <td style="color:white">@x.DiziSezonSayi</td>
+            <td style="color:white">@x.DiziBegeni</td>
+            <td style="color:white">@x.DiziIMDB</td>
+            <td style="color:white">@x.DiziBilgi</td>
 
 
-<section class="normal-breadcrumb set-bg" data-setbg="/img/GirişYapEkranı/micheal.jpg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <div class="normal__breadcrumb__text">
-                    <h2>ADMİN</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+            <td><a class="btn btn-danger" asp-area="" asp-controller="Admin" asp-action="DiziSil" asp-route-id="@x.DiziID"> Sil </a></td><!-- Dizi Sil -->
+            <td><a class="btn btn-primary" asp-area="" asp-controller="Admin" asp-action="VeriGetir" asp-route-id="@x.DiziID"> Güncelle </a></td><!-- Dizi Güncelle -->
+        </tr>
+    }
 
-<section class="login spad">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-lg-6">
-                <div class="login__form">
-                    <h3>ADMİN GİRİŞ EKRANI</h3>
-                    <form method="post">
-
-                        <div class="input__item">
-                            <input type="text" placeholder="Kullanıcı Adı" class="name" name="KullaniciAdi" required="">
-                            <span class="icon_profile"></span>
-                        </div>
-
-                        <div class="input__item">
-                            <input type="password" placeholder="Parola" class="password" name="Sifre" required="">
-                            <span class="icon_lock"></span>
-                        </div>
-
-                        <button type="submit" class="site-btn">Giriş Yap</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+</table>
+<br />
+<a class="site-btn" asp-area="" asp-controller="Admin" asp-action="DiziEkle">Yeni Dizi</a>&nbsp;<a class="site-btn" asp-area="" asp-controller="Admin" asp-action="Cikis">Çıkış Yap</a> <!-- Bu butona basıldığında Anasayfaya geri döndürecek AdminControllerda bulunan action çağırılır. -->
+<!--YENİ Birim TUŞUNA TIKLANDIĞINDA YENİ Birim İÇİN OLUŞTURDUĞUMUZ INDEX'E GİDECEK.
+    Controller/Index şeklinde yazılıyor. UZANTILARI EKLEME-->

@@ -9,8 +9,8 @@ using WEBPROGRAMLAMA_ODEV.Models;
 namespace WEBPROGRAMLAMA_ODEV.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210102094340_guzelOlcak")]
-    partial class guzelOlcak
+    [Migration("20210103134130_Migration__Final")]
+    partial class Migration__Final
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,10 +28,10 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("KullaniciAdi")
-                        .HasColumnType("Varchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Sifre")
-                        .HasColumnType("Varchar(10)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("AdminID");
 
@@ -90,8 +90,8 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                     b.Property<string>("KullaniciAdi")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Parola")
-                        .HasColumnType("int");
+                    b.Property<string>("Parola")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UyeID");
 

@@ -5,7 +5,7 @@
 }
 
 <br />
-<!--başlangıç formu belirledik. içinde BirimControllerda bulunuacak ve
+<!-- Başlangıç formu belirledik. içinde BirimControllerda bulunuacak ve
     Post metot kullanıldığında çalışacak yani buton falan basıldığında-->
 
 @using (Html.BeginForm("DiziGuncelle", "Admin", FormMethod.Post, new { style = "background-color:#0b0c2a" }))
@@ -13,7 +13,7 @@
     <table>
         <tr>
             <td><span style="color:crimson">@Html.LabelFor(x => x.DiziID)</span></td>
-            <td>@Html.TextBoxFor(x => x.DiziID, new { @class = "input__item" })</td><!--/*form-control kısmı veri giriş yeri daha güzel gözüksün diye*/-->
+            <td>@Html.TextBoxFor(x => x.DiziID, new { @class = "input__item" })</td><!--/* Form-control kısmı veri giriş yeri daha güzel gözüksün diye */-->
         </tr>
         <tr>
             <td><span style="color:crimson">@Html.LabelFor(x => x.DiziAd)</span></td>
@@ -55,7 +55,10 @@
     <br />
     /*bu form DiziGüncelle actionResultı çalıştıracak ve içinde Birim isimli controller olacak
     post olduğunda çalışacak*/
-    <button class="site-btn">Veri Güncelle</button>
+<div>
+    <button class="site-btn">Veri Güncelle</button>&nbsp;<a class="site-btn" asp-area="" asp-controller="Admin" asp-action="AdminPanel">Geri Dön</a> <!-- Bu butona basıldığında AdminPanel viewine geri dönülüyor. -->
+</div>
+   
 }
 
 

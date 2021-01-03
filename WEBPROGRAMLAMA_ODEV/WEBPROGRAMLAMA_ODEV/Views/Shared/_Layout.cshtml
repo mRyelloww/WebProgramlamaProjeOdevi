@@ -1,13 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="Anime Template">
-    <meta name="keywords" content="Anime, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <title>@ViewData["Title"] - WEBPROGRAMLAMA_ODEV</title>
 
     <meta charset="UTF-8">
@@ -23,8 +16,6 @@
 
     <!-- CSS STYLES -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-
     <link rel="stylesheet" href="~/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="~/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="~/css/elegant-icons.css" type="text/css" />
@@ -38,8 +29,7 @@
 
 <body>
 
-    <div id="preloder">
-        <!-- bu niye var tam çözemedim -->
+    <div id="preloder"> <!-- Sayfalar arası geçişlerde yumuşaklık sağlayan div -->
         <div class="loader">
 
         </div>
@@ -51,8 +41,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a asp-area="" asp-controller="Home" asp-action="Index"> <img src="~/img/AGAGAGA.png" alt="" /> </a>
-
+                        <a asp-area="" asp-controller="Home" asp-action="Index"> <img src="~/img/Dizile.comLogo.png" alt="" /> </a>
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -65,7 +54,7 @@
                                 <!-- Diziler -->
                                 <li><a asp-area="" asp-controller="Diziler" asp-action="DizilerSayfasi">Diziler</a></li>
 
-                                <!-- Üyelik  -->
+                                <!-- Üyelik ve GirişYap -->
                                 <li>
                                     <a asp-area="" asp-controller="UyeOl" asp-action="UyeOlSayfasi">Üyelik <span class="arrow_carrot-down"></span></a>
 
@@ -87,7 +76,7 @@
 
                         <a href="#" class="search-switch"><span class="icon_search"></span></a> <!-- ARAMA ÇUBUĞU MİSALİ -->
 
-                        <a href=""><span class="icon_profile"></span></a>
+                        <a asp-area="" asp-controller="GirisYap" asp-action="GirisYapSayfasi"><span class="icon_profile"></span></a>
 
                     </div>
                 </div>
@@ -97,17 +86,17 @@
         </div>
     </header>
     <!-- HEADER SECTİON BİTTİ -->
+
     <div class="container">
         @RenderBody()
     </div>
-
-
-
+    
+    <!-- Normalde projemize arama kısmı getirecektik fakat sonra vazgeçtik.Yine de viewi güzel durduğu için buradan silmedik. -->
     <div class="search-model">
         <div class="h-100 d-flex align-items-center justify-content-center">
             <div class="search-close-switch"><i class="icon_close"></i></div>
             <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
+                <input type="text" id="search-input" placeholder="Bir dizi arayın...">
             </form>
         </div>
     </div>
@@ -115,7 +104,6 @@
     <!-- JS PLUGINLERİ -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/jquery-3.3.1.min.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
     <script src="~/js/player.js"></script>

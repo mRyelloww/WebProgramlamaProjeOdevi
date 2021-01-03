@@ -1,4 +1,9 @@
-﻿using System;
+﻿/**
+* @ G191210351 Eren Can Sarı ve B191210351 İlker Küçücük
+* @description Web Programlama Proje Ödevi
+* @date 03.01.2021
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -19,25 +24,29 @@ namespace WEBPROGRAMLAMA_ODEV.Controllers
 
             var uyeler = contexteErisim.UyelerTablo.ToList();
 
+            bool kullaniciAdiVarMi = false; // View kısmında kullanıcı adının database'de olup olmadığı bilgisini aktarma ve viewde alert vermeye yarayan bool.
 
-            bool kullaniciAdiVarMi = false;
-
-            var bilgiler = contexteErisim.UyelerTablo.FirstOrDefault(x => x.KullaniciAdi == uyeVeri.KullaniciAdi);
+            var bilgiler = contexteErisim.UyelerTablo.FirstOrDefault(x => x.KullaniciAdi == uyeVeri.KullaniciAdi); // Girilen kullanıcı adı Databasede var ise Bilgilere atanıyor.
 
 
-            if (bilgiler != null)/*bilgiler uyuşursa çalışacak.*/
+            if (bilgiler != null) // Girilen Kullanıcı Adı yukarıda databasede bulunduysa database'ye eklenmez ve geri döndürülür.
             {
                 kullaniciAdiVarMi = true;
                 return View(kullaniciAdiVarMi);
-
-
             }
-            else
+            else  // Girilen Kullanıcı Adı yukarıda databasede bulunamadıysa databaseye eklenir
             {
-                contexteErisim.UyelerTablo.Add(uyeVeri);
-                contexteErisim.SaveChanges();
-                kullaniciAdiVarMi = false;
-                return View(kullaniciAdiVarMi);
+                if (uyeVeri.KullaniciAdi != null || uyeVeri.Parola != null) // Burada kullanıcı adı veya parola boş bir değer girildiğinde data baseye atanamasın diye bir sorgudan daha geçiriliyor.
+                {
+                    contexteErisim.UyelerTablo.Add(uyeVeri);
+                    contexteErisim.SaveChanges();
+                    kullaniciAdiVarMi = false;
+                    return View(kullaniciAdiVarMi);
+                }
+                else
+                {
+                    return View();
+                }
             }
         }
 

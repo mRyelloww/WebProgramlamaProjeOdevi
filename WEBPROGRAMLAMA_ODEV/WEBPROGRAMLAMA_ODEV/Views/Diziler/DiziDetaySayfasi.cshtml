@@ -7,12 +7,6 @@
     ViewData["Title"] = "Diziler";
 }
 
-<!--
-foreach (var item in Model)
-{
-    <p>item.DiziAd</p>
-}
--->
 <!-- BREADCRUMB -->
 <div class="breadcrumb-option">
     <div class="container">
@@ -20,7 +14,7 @@ foreach (var item in Model)
             <div class="col-lg-12">
                 <div class="breadcrumb__links">
                     <a asp-area="" asp-controller="Home" asp-action="Index"> <i class="fa fa-home">  </i> AnaSayfa </a>
-                    <a asp-area="" asp-controller="Diziler" asp-action="DizilerSayfasi"> <i class="fa fa-home">  </i> Diziler </a>
+                    <a asp-area="" asp-controller="Diziler" asp-action="DizilerSayfasi">Diziler </a>
                     <span style="color:crimson"> @Html.ViewData.Model.DiziAd </span>
                 </div>
             </div>
@@ -72,8 +66,8 @@ foreach (var item in Model)
                                         <li><span>Yayın Tarihi:</span> @Html.ViewData.Model.DiziTarih </li>
                                         <li>
                                             <span>Tür: </span>
-                                            
-                                            @if (Model.DiziTurler != null)
+                                           
+                                            @if (Model.DiziTurler != null)/*Veritabanına eklenen dizi türlerini ayrıştırır ve Dizi Detay Sayfası için sıralar*/
                                             {
                                                 string[] _turler = Model.DiziTurler.Split("-");
                                                 string _sonEleman = _turler.Last();

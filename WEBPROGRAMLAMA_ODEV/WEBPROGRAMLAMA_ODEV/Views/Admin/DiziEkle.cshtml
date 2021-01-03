@@ -1,18 +1,24 @@
 ﻿@model WEBPROGRAMLAMA_ODEV.Models.Diziler
 <br />
 
+<!--BU FORM SAYFASI VERİTABANINA VE ORADAN DA GEREKLİ SAYFALARA DİZİ EKLEMEK İÇİN KULLANILACAK. VERİ GİRİŞİ BURADAN SAĞLANACAK VE AdminController'dan VERİTABANINA UYGULANACAK-->
 <form class="form-group" method="post">
     <table>
         <tr>
 
             <td> <span style="color:crimson">@Html.LabelFor(x => x.DiziAd)</span></td>
-            <!--LABELIN İÇİNE BirimAD SUTUNNUDA NE YAZIYORSA O YAZSIN
-            <b>BirimAdı</b> ile aynı şey-->
+            <!--LABELIN İÇİNE BirimAD SUTUNNUDA NE YAZIYORSA O DEĞER LABEL'A YAZILSIN
+        <b>BirimAdı</b> ile aynı şey-->
 
             <td>  @Html.TextBoxFor(x => x.DiziAd, new { @class = "input__item" })</td>
             <!--TEXTBOXA GİRİLEN VERİLERİ Birim AD İLE EŞLEŞTİRECEK
-            2.kısım veri giriş yeri daha güzel gözüksün diye-->
+        2.kısım veri giriş yeri daha güzel gözüksün diye-->
 
+        </tr>
+        <tr>
+            <td>  <span style="color:crimson">@Html.LabelFor(x => x.DiziTurler)</span></td>
+            <td title="*Birden fazla tür için türler arasına kısa çizgi(-) koyun."> 
+            @Html.TextBoxFor(x => x.DiziTurler, new { @class = "input__item" })</td>
         </tr>
         <tr>
             <td>  <span style="color:crimson">@Html.LabelFor(x => x.DiziStudyo)</span></td>
@@ -41,15 +47,11 @@
         </tr>
         <tr>
             <td><span style="color:crimson">@Html.LabelFor(x => x.DiziDosyaAdi)</span></td>
-            <td>@Html.TextBoxFor(x => x.DiziDosyaAdi, new { @class = "input__item" })</td>
+            <td title="Dizi posterleri klasörüne eklenen görüntünün uzantısı ile beraber adını giriniz. (örn. brooklyn99.jpg)"
+                >@Html.TextBoxFor(x => x.DiziDosyaAdi, new { @class = "input__item" })</td>
         </tr>
     </table>
-    <!--TÜRLERİ ÇOKTAN SEÇMELİ EKLEYEBİLİRİZ.-->
-    @{ /*
-                      Html.LabelFor(x => x.BirimID);
-                      Html.DropDownListFor(x => x.BirimNesne.BirimID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" });*/
-    }
-    <!--selectlistitem a doldurulacak değerleri viewBag ile taşıyor.-->
     <br />
     <button class="site-btn">Dizi Ekle</button>
+    <a class="site-btn" asp-area="" asp-controller="Admin" asp-action="AdminPanel">Geri Dön</a> <!-- Bu butona basıldığında AdminPanel viewine geri dönülüyor. -->
 </form>

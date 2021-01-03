@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ilker\\Masaüstü\\PROJE SAVE\\bunda çalışcam\\WebProgramlamaProjeOdevi\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj": {}
+    "C:\\Users\\mRyellow\\Desktop\\PAZAR GÜNÜ FİNAL\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj": {}
   },
   "projects": {
-    "D:\\ilker\\Masaüstü\\PROJE SAVE\\bunda çalışcam\\WebProgramlamaProjeOdevi\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj": {
+    "C:\\Users\\mRyellow\\Desktop\\PAZAR GÜNÜ FİNAL\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ilker\\Masaüstü\\PROJE SAVE\\bunda çalışcam\\WebProgramlamaProjeOdevi\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj",
+        "projectUniqueName": "C:\\Users\\mRyellow\\Desktop\\PAZAR GÜNÜ FİNAL\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj",
         "projectName": "WEBPROGRAMLAMA_ODEV",
-        "projectPath": "D:\\ilker\\Masaüstü\\PROJE SAVE\\bunda çalışcam\\WebProgramlamaProjeOdevi\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj",
-        "packagesPath": "C:\\Users\\ilker\\.nuget\\packages\\",
-        "outputPath": "D:\\ilker\\Masaüstü\\PROJE SAVE\\bunda çalışcam\\WebProgramlamaProjeOdevi\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\obj\\",
+        "projectPath": "C:\\Users\\mRyellow\\Desktop\\PAZAR GÜNÜ FİNAL\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV.csproj",
+        "packagesPath": "C:\\Users\\mRyellow\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mRyellow\\Desktop\\PAZAR GÜNÜ FİNAL\\WEBPROGRAMLAMA_ODEV\\WEBPROGRAMLAMA_ODEV\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ilker\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mRyellow\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +26,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,9 +37,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Hosting.Abstractions": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
@@ -68,6 +70,10 @@
               "target": "Package",
               "version": "[5.0.1, )"
             },
+            "Microsoft.Identity.Web.UI": {
+              "target": "Package",
+              "version": "[1.4.1, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.4, )"
@@ -91,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "D:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -16,29 +16,49 @@ namespace WEBPROGRAMLAMA_ODEV
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+       
+        public Startup(IConfiguration configuration)            /*Startup sýnýfý constructor'u. Baþlangýçta konfigürasyonu saðlar*/
         {
+            Context contexteErisim = new Context();
+            Admin eren = new Admin();
+            eren.KullaniciAdi = "G191210351@ogr.sakarya.edu.tr";
+            eren.Sifre = "123";
+
+
+            Admin ilker = new Admin();
+            ilker.KullaniciAdi = "B191210351@ogr.sakarya.edu.tr";
+            ilker.Sifre = "123";
+
+            var bilgiler1 = contexteErisim.AdminTablo.FirstOrDefault(x => x.KullaniciAdi == ilker.KullaniciAdi);
+            var bilgiler2 = contexteErisim.AdminTablo.FirstOrDefault(x => x.KullaniciAdi == eren.KullaniciAdi);
+            if (bilgiler1 == null && bilgiler2 == null)
+            {
+                contexteErisim.AdminTablo.Add(ilker);
+                contexteErisim.AdminTablo.Add(eren);
+                contexteErisim.SaveChanges();
+
+            }
+
+
             Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        
+        public void ConfigureServices(IServiceCollection services) 
         {
             services.AddControllersWithViews();
-            var connection = @"server =.; database = CoplukDB; trusted_connection = true; ";
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            var connection = @"server =.; database = DizileDB; trusted_connection = true; ";
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme) // Yetkilendirme servisi için Cookie atanýyor.
                 .AddCookie(x => {
-                    x.LoginPath = "";
+                    x.LoginPath = "/Admin/AdminPanelGirisSayfasi/"; // Herhangi bir þekilde admin paneline veya admin paneldeki bir iþleme login atmadan URL den giriþ yapýlmaya kalkýþýldýðýnda direkt olarak Admin Panel Giriþ Sayfasýna yönlendirir.
                 });
             services.AddDbContext<Context>(options => options.UseSqlServer(connection));
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseAuthentication();
+            app.UseAuthentication();    // Authentication da kullanýlacak servis projeye ekleniyor.
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -46,7 +66,7 @@ namespace WEBPROGRAMLAMA_ODEV
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
@@ -61,7 +81,7 @@ namespace WEBPROGRAMLAMA_ODEV
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Admin}/{action=AdminPanel}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/**
+* @ G191210351 Eren Can Sarı ve B191210351 İlker Küçücük
+* @description Web Programlama Proje Ödevi
+* @date 03.01.2021
+*/
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -13,31 +18,28 @@ namespace WEBPROGRAMLAMA_ODEV.Controllers
     
     public class DizilerController : Controller
     {
-        Context contexteErisim = new Context();
-        public static List<Context> DizilerListesi = new List<Context>();
+        readonly Context contexteErisim = new Context();     
+        public static List<Context> DizilerListesi = new List<Context>();       /* Veri tabanıyla bağlantı kurulur ve DizilerListesi tablosu çekilir.*/
 
-        public IActionResult DizilerSayfasi()
+        public IActionResult DizilerSayfasi()   /*tablodaki verileri listeleyen View'in Action'u*/
         {
             var DiziTablosu = contexteErisim.DiziTablo.ToList();
-            //ViewBag.id = 0;
-
             return View(DiziTablosu);
         }
 
-        public IActionResult DiziDetaySayfasi(int id)
+        public IActionResult DiziDetaySayfasi(int id)  /* Diziler sayfasından seçilen dizinin detaylarını gösteren sayfaya yönlendirir*/
         {
-            List<string> dizininVerileri = new List<string>();
             var DiziTabloIstenenSatir = contexteErisim.DiziTablo.Find(id);
 
             return View(DiziTabloIstenenSatir);
         }
-        public IActionResult BegeniArtti(int id)
+        public IActionResult BegeniArtti(int id)     /* DiziDetaySayfasindaki beğeni butonuna basıldığında beğeni bir artar ve veritabanına işlenir.*/
         {
             var DiziTabloIstenenSatir = contexteErisim.DiziTablo.Find(id);
             DiziTabloIstenenSatir.DiziBegeni++;
             contexteErisim.SaveChanges();
 
-            return RedirectToAction("DiziDetaySayfasi", new { id = id });
+            return RedirectToAction("DiziDetaySayfasi", new { id });
         }
     }
 }

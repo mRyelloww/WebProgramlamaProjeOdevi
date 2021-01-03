@@ -2,7 +2,7 @@
 
 namespace WEBPROGRAMLAMA_ODEV.Migrations
 {
-    public partial class calisirmsn : Migration
+    public partial class Migration__Final : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,8 +12,8 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                 {
                     AdminID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    KullaniciAdi = table.Column<string>(type: "Varchar(20)", nullable: true),
-                    Sifre = table.Column<string>(type: "Varchar(10)", nullable: true)
+                    KullaniciAdi = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Sifre = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -34,24 +34,12 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                     DiziIMDB = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DiziBilgi = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DiziLink = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DiziDosyaAdi = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    DiziDosyaAdi = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DiziTurler = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DiziTablo", x => x.DiziID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "DiziTurTablo",
-                columns: table => new
-                {
-                    TurID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Tur = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DiziTurTablo", x => x.TurID);
                 });
 
             migrationBuilder.CreateTable(
@@ -61,41 +49,12 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                     UyeID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     KullaniciAdi = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Parola = table.Column<int>(type: "int", nullable: false)
+                    Parola = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UyelerTablo", x => x.UyeID);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "DiziTurDizilerTablo",
-                columns: table => new
-                {
-                    DiziID = table.Column<int>(type: "int", nullable: false),
-                    TurID = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DiziTurDizilerTablo", x => new { x.DiziID, x.TurID });
-                    table.ForeignKey(
-                        name: "FK_DiziTurDizilerTablo_DiziTablo_DiziID",
-                        column: x => x.DiziID,
-                        principalTable: "DiziTablo",
-                        principalColumn: "DiziID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_DiziTurDizilerTablo_DiziTurTablo_TurID",
-                        column: x => x.TurID,
-                        principalTable: "DiziTurTablo",
-                        principalColumn: "TurID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_DiziTurDizilerTablo_TurID",
-                table: "DiziTurDizilerTablo",
-                column: "TurID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -104,16 +63,10 @@ namespace WEBPROGRAMLAMA_ODEV.Migrations
                 name: "AdminTablo");
 
             migrationBuilder.DropTable(
-                name: "DiziTurDizilerTablo");
-
-            migrationBuilder.DropTable(
-                name: "UyelerTablo");
-
-            migrationBuilder.DropTable(
                 name: "DiziTablo");
 
             migrationBuilder.DropTable(
-                name: "DiziTurTablo");
+                name: "UyelerTablo");
         }
     }
 }

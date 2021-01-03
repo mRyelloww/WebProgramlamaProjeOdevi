@@ -1,4 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/**
+* @ G191210351 Eren Can Sarı ve B191210351 İlker Küçücük
+* @description Web Programlama Proje Ödevi
+* @date 03.01.2021
+*/
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +13,7 @@ namespace WEBPROGRAMLAMA_ODEV.Models
 {
     public class Context:DbContext
     {
+        /*BOŞ METOTLARI SİLME*/
         public Context()
         {
         }
@@ -16,39 +22,23 @@ namespace WEBPROGRAMLAMA_ODEV.Models
         {
 
         }
-        /*Tanımladığımız tüm sınıflar*/
-        //public DbSet<Filmler> FilmDB{ get; set; }
 
+        /*Modellerin veritabanında tabloya dönüşmesini sağlayacak DbSet verileri*/
         public DbSet<Diziler> DiziTablo { get; set; }
-        /*public DbSet<DiziTur> DiziTurTablo { get; set; }*/
-       /* public DbSet<DiziTurDiziler> DiziTurDizilerTablo { get; set; }*/
         public DbSet<Admin> AdminTablo { get; set; }
-
         public DbSet<Uyeler> UyelerTablo { get; set; }
 
         /*VERİTABANINA YANSITMA YAPACAĞIMIZ SINIF
-         * veritabınındaki tablolar*/
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        /* veritabınındaki tablolar*/
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) /* Kullanılacak veri tabanına ait isim, server bilgisi burada giriliyor.*/
         {
-            optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB; database=CoplukDB; integrated security=true;");
+            optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB; database=DizileDB; integrated security=true;");
             /*SQL OBJECT EXPLORER SQL SERVERİN ADINI ALDIK VE BURAYA YAPIŞTIRDIK AMA ÇİFT \ İSTİYOR DİKKAT ET*/
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            /*modelBuilder.Entity<DiziTurDiziler>()
-                .HasKey(dd => new { dd.DiziID, dd.TurID });
-            modelBuilder.Entity<DiziTurDiziler>()
-                .HasOne(bc => bc.Dizi_iliski)
-                .WithMany(b => b.DiziTur_Col)
-                .HasForeignKey(bc => bc.DiziID);
-            modelBuilder.Entity<DiziTurDiziler>()
-                .HasOne(dd => dd.DiziTur_iliski)
-                .WithMany(c => c.DiziTur_Col)
-                .HasForeignKey(bc => bc.TurID);*/
+
         }
-
-
-
     }
 }

@@ -34,16 +34,6 @@
                                     <h4> DİZİLER </h4>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <div class="product__page__filter">
-                                    <p>SIRALA:</p>
-                                    <select>
-                                        <option value="">A-Z</option>
-                                        <option value="">1-10</option>
-                                        <option value="">10-50</option>
-                                    </select>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -63,10 +53,9 @@
 
                                     <div class="product__item__text">
 
-                                        @if (Model[i].DiziTurler != null)
+                                        @if (Model[i].DiziTurler != null)   /*Veritabanına eklenen dizi türlerini ayrıştırır ve Diziler Sayfası için sıralar*/
                                         {
                                             string[] _turler = Model[i].DiziTurler.Split("-");
-                                            TempData["tur"] = _turler;
                                             <ul>
                                                 @foreach (var item in _turler)
                                                 {
@@ -74,9 +63,7 @@
                                                 }
                                             </ul>
                                         }
-
-
-
+                                        <!--Tıklana diziye göre dizinin id'sini göndererek Dizi Detay Sayfasını düzenler ve gerekli verileri getirir.-->
                                         <h5> <a asp-area="" asp-controller="Diziler" asp-action="DiziDetaySayfasi" asp-route-id="@Model[i].DiziID"> @Model[i].DiziAd </a> </h5>
                                     </div>
                                 </div>
@@ -116,7 +103,8 @@
                                     </div>
                                 }
                                 if (Model[i].DiziAd == "Stranger Things")
-                                {
+                     
+                                                                                                                    {
                                     <div class="product__sidebar__view__item set-bg mix years month" data-setbg="/img/EnÇokİzlenenler/strangerthings.jpg">
                                         <div class="ep">Sezon sayısı: @Model[i].DiziSezonSayi</div>
                                         <div class="view"><i class="fa fa-thumbs-up"></i> @Model[i].DiziBegeni </div>

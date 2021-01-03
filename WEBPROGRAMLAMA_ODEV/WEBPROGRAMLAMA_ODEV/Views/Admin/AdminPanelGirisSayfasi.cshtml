@@ -1,0 +1,57 @@
+﻿@model List<bool>
+@{
+    ViewData["Title"] = "Admin Giriş";
+}
+
+@{  /*Kimlik doğrulama verilerinin kontrolu sonucu gelecek olan bool değerler aşağıda kontrol edilecek. bool değerler List halinde model'de tutulacak*/
+    if (Model[0] == false)
+    {
+        <script>alert("Lütfen Doğru Tipte Bir Kullanıcı Adı Giriniz!");</script>
+    }
+    else if (Model[1] == false)
+    {
+        <script>alert("Girdiğiniz Bilgiler Veritabanında Bulunamadı Lütfen Tekrar Deneyiniz!");</script>
+    }
+}
+<!--ADMİN İÇİN LOGİN SAYFASINDA YER ALACAK RESİMLİ TEMA-->
+<section class="normal-breadcrumb set-bg" data-setbg="/img/AdminPanelGirisEkranı/micheal.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="normal__breadcrumb__text">
+                    <h2>ADMİN</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--**************************************************-->
+
+<!--ADMIN'IN GİRİŞ YAPACAĞI SAYFANIN KULLANICI ADI VE ŞİFRE GİRECEĞİ LOGİN KISMI-->
+<section class="login spad">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6">
+                <div class="login__form">
+                    <h3>ADMİN GİRİŞ EKRANI</h3>
+                    <form method="post">
+
+                        <div class="input__item">
+                            <input type="text" placeholder="Kullanıcı Adı" class="name" name="KullaniciAdi" required="">
+                            <span class="icon_profile"></span>
+                        </div>
+
+                        <div class="input__item">
+                            <input type="password" placeholder="Parola" class="password" name="Sifre" required="">
+                            <span class="icon_lock"></span>
+                        </div>
+
+                        <button type="submit" class="site-btn">Giriş Yap</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--**************************************************-->

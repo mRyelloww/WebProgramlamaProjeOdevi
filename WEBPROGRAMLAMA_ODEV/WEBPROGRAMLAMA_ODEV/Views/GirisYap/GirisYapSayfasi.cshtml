@@ -1,7 +1,21 @@
-﻿@{
+﻿@model bool
+@{
     ViewData["Title"] = "Giriş Yap";
 }
 
+@if (Model == false)             /*textboxtan girilen değerlerin, GirisYapController'da veritabanıyla karşılaştırılma sonucuna göre dönen bool değeri gerekli alert'i aktif eder.*/
+{
+    <script>alert("Kullanıcı Adı veya Şifre Hatalı");</script>
+
+}
+else
+{
+    if (!ViewBag.kontrol)
+    {
+        <script>alert("Giriş Başarılı");</script>
+    }
+}
+<!--ÜYE LOGİN SAYFASI İÇİN TEMA-->
 <section class="normal-breadcrumb set-bg" data-setbg="/img/GirişYapEkranı/sonsofanarchy.jpg">
     <div class="container">
         <div class="row">
@@ -14,7 +28,9 @@
         </div>
     </div>
 </section>
+<!--******************************************-->
 
+<!--ÜYELER İÇİN LOGİN EKRANI-->
 <section class="login spad">
     <div class="container">
         <div class="row">
@@ -22,15 +38,15 @@
             <div class="col-lg-6">
                 <div class="login__form">
                     <h3>GİRİŞ YAP</h3>
-                    <form action="#">
+                    <form method="post">
 
                         <div class="input__item">
-                            <input type="text" placeholder="Kullanıcı Adı">
+                            <input type="text" placeholder="Kullanıcı Adı" name="KullaniciAdi" required="">
                             <span class="icon_profile"></span>
                         </div>
 
                         <div class="input__item">
-                            <input type="text" placeholder="Parola">
+                            <input type="password" placeholder="Parola" name="Parola" required="">
                             <span class="icon_lock"></span>
                         </div>
 
@@ -38,14 +54,15 @@
                     </form>
                 </div>
             </div>
-
+            <!--KAYITLI ÜYELİK YOKSA BUTONA BASILARAK ÜYE OL SAYFASINA GİDİLEBİLİR.-->
             <div class="col-lg-6">
                 <div class="login__register">
                     <h3>Bir hesabın yok mu?</h3>
-                     <a asp-area="" asp-controller="UyeOl" asp-action="UyeOlSayfasi" class="primary-btn"> Şimdi Üye Ol </a>
+                    <a asp-area="" asp-controller="UyeOl" asp-action="UyeOlSayfasi" class="primary-btn"> Şimdi Üye Ol </a><!--üye ol sayfasına yönlendiren buton-->
                 </div>
             </div>
 
         </div>
     </div>
 </section>
+<!--******************************************-->
