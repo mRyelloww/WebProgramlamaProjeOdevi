@@ -37,7 +37,7 @@ namespace WEBPROGRAMLAMA_ODEV.Controllers
 
             var diziler = contexteErisim.DiziTablo.ToList();
 
-            if (adminVeri.KullaniciAdi != null && !adminVeri.KullaniciAdi.Contains("@ogr.sakarya.edu.tr"))/*textbox boş gönderilmediyse ve kullanıcı adının formatı doğru değilse çalışır*/
+            if (adminVeri.KullaniciAdi != null && !adminVeri.KullaniciAdi.Contains("@sakarya.edu.tr"))/*textbox boş gönderilmediyse ve kullanıcı adının formatı doğru değilse çalışır*/
             {
                 _kontroller[0] = false;
                 return View(_kontroller);

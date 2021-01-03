@@ -18,10 +18,9 @@ namespace WEBPROGRAMLAMA_ODEV.Controllers
     
     public class DizilerController : Controller
     {
-        readonly Context contexteErisim = new Context();     
-        public static List<Context> DizilerListesi = new List<Context>();       /* Veri tabanıyla bağlantı kurulur ve DizilerListesi tablosu çekilir.*/
+        readonly Context contexteErisim = new Context();   
 
-        public IActionResult DizilerSayfasi()   /*tablodaki verileri listeleyen View'in Action'u*/
+        public IActionResult DizilerSayfasi()   /* Tablodaki verileri listeleyen View'in Action'u*/
         {
             var DiziTablosu = contexteErisim.DiziTablo.ToList();
             return View(DiziTablosu);

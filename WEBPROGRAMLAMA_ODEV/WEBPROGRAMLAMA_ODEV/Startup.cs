@@ -21,12 +21,12 @@ namespace WEBPROGRAMLAMA_ODEV
         {
             Context contexteErisim = new Context();
             Admin eren = new Admin();
-            eren.KullaniciAdi = "G191210351@ogr.sakarya.edu.tr";
+            eren.KullaniciAdi = "G191210351@sakarya.edu.tr";
             eren.Sifre = "123";
 
 
             Admin ilker = new Admin();
-            ilker.KullaniciAdi = "B191210351@ogr.sakarya.edu.tr";
+            ilker.KullaniciAdi = "B191210351@sakarya.edu.tr";
             ilker.Sifre = "123";
 
             var bilgiler1 = contexteErisim.AdminTablo.FirstOrDefault(x => x.KullaniciAdi == ilker.KullaniciAdi);
@@ -36,7 +36,6 @@ namespace WEBPROGRAMLAMA_ODEV
                 contexteErisim.AdminTablo.Add(ilker);
                 contexteErisim.AdminTablo.Add(eren);
                 contexteErisim.SaveChanges();
-
             }
 
 
